@@ -1,0 +1,27 @@
+{
+  "name": "nft_toy_project",
+  "version": "1.0.0",
+  "description": "d\r hihi",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huna91/nft-toy-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huna91/nft-toy-project/issues"
+  },
+  "homepage": "https://github.com/huna91/nft-toy-project#readme",
+  "dependencies": {
+    "openzeppelin-solidity": "^4.6.0",
+    "truffle": "^5.7.1"
+  }
+}
