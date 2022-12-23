@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/Strings.sol";
+import "../node_modules/openzeppelin-solidity/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "../node_modules/openzeppelin-solidity/contracts/access/Ownable.sol";
+import "../node_modules/openzeppelin-solidity/contracts/utils/Strings.sol";
 // import "./gazeaErc20.sol";
 
 contract NFTtoken is ERC721Enumerable,Ownable {
