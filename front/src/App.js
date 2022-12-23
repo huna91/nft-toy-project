@@ -7,6 +7,20 @@ import { useEffect, useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Web3 from "web3/dist/web3.min.js";
+import { Alert, Stack, AlertTitle } from "@mui/material";
+
+function Alert_warn() {
+  return (
+    <div className="Alert_Wrap">
+      <Stack sx={{ width: "100%" }} spacing={2}>
+        <Alert severity="warning" onClose={() => {}}>
+          <AlertTitle>Warning</AlertTitle>
+          This is a warning alert — <strong>check it out!</strong>
+        </Alert>
+      </Stack>
+    </div>
+  );
+}
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -58,6 +72,7 @@ function App() {
       method: "wallet_addEthereumChain",
       params: [netWork],
     });
+    Alert_warn();
   };
   const login = async () => {
     console.log("로그인시도");
@@ -81,6 +96,8 @@ function App() {
   };
 
   useEffect(() => {}, []);
+  console.log(web3);
+  console.log(account);
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
@@ -95,7 +112,10 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/minting" element={<Minting />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/mypage" element={<Mypage />} />
+          <Route
+            path="/mypage"
+            element={<Mypage web3={web3} account={account} />}
+          />
         </Routes>
       </div>
     </ThemeProvider>

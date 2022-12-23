@@ -1,14 +1,22 @@
 import React, { useState } from "react";
 import { Header_wrap, Header_wrap_left, Header_wrap_right } from "./styledCom";
-import Box from "@mui/material/Box";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import { alpha, styled } from "@mui/material/styles";
 import { pink } from "@mui/material/colors";
 import Switch from "@mui/material/Switch";
 import { Navigate, useNavigate } from "react-router-dom";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+import {
+  Avatar,
+  alpha,
+  styled,
+  Box,
+  Tabs,
+  Tab,
+  Button,
+  Menu,
+  MenuItem,
+  Fade,
+} from "@mui/material";
 
 // dark모드 switch
 const GreenSwitch = styled(Switch)(({ theme }) => ({
@@ -42,6 +50,12 @@ function LinkTab(props) {
 const Header = ({ isLogin, theme, setTheme, login }) => {
   const [backColor, setBackColor] = useState("dark");
   const [value, setValue] = useState(null);
+  const navi = useNavigate();
+
+  function move_page(page) {
+    navi(page);
+  }
+
   const handleChange = (_event, _newValue) => {
     setValue(_newValue);
   };
@@ -50,11 +64,28 @@ const Header = ({ isLogin, theme, setTheme, login }) => {
     theme == "light" ? setTheme("dark") : setTheme("light");
   };
   console.log(isLogin);
+
+  // 개인 아바타 컨트롤
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = (e) => {
+    setAnchorEl(null);
+    navi(e);
+  };
+
   return (
     <Header_wrap>
       <Header_wrap_left>
         <div>
-          <a href="/">
+          <a
+            onClick={() => {
+              move_page("/");
+            }}
+            style={{ cursor: "pointer" }}
+          >
             <img src="./images/rwd_logo.png" style={{ width: "70px" }} />
           </a>
         </div>
@@ -92,7 +123,48 @@ const Header = ({ isLogin, theme, setTheme, login }) => {
         {isLogin ? (
           <div>
             <div class="icon-box">
-              <a>Wallet connected</a>
+              <Avatar />
+              <Button
+                id="fade-button"
+                aria-controls={open ? "fade-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
+              >
+                Dashboard
+              </Button>
+              <Menu
+                id="fade-menu"
+                MenuListProps={{
+                  "aria-labelledby": "fade-button",
+                }}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                TransitionComponent={Fade}
+              >
+                <MenuItem
+                  onClick={() => {
+                    handleClose("/mypage");
+                  }}
+                >
+                  My Pages
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    handleClose("2");
+                  }}
+                >
+                  My account
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    handleClose("3");
+                  }}
+                >
+                  Logout
+                </MenuItem>
+              </Menu>
             </div>
           </div>
         ) : (

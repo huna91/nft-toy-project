@@ -13,7 +13,7 @@ const Main = () => {
   return (
     <Main_wrap>
       <Main_contents_wrap>
-        <h1>NEW!!</h1>
+        <h1>OUR MONSTER!!</h1>
         <Main_New>
           <Main_New_ul ref={scrollRef}>
             <Main_New_li>

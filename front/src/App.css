@@ -1,0 +1,6 @@
+.Alert_Wrap{
+    position: fixed;
+    width: 60%;
+    height: 60px;
+    transform: translate(-50%,-50%);
+}
