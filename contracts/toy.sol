@@ -81,8 +81,5 @@ contract NFTtoken2 is ERC721Enumerable,Ownable {
         metadataURI = _uri;
     }
 
-    // function getTokenCount() public view returns (uint256[] memory) {
-    //     return tokenCount;
-    // }
 }
 
