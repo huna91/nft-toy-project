@@ -43,13 +43,12 @@ function App() {
         const Deployed = await new web3.eth.Contract(abi, CA);
         const count = await Deployed.methods.getTokenCount().call();
         const getOwnerBalance = await web3.eth.getBalance(_accounts);
-        let tokenURI = [];
-
+      let tokenURI = [];
         for (let i = 1; i < 60; i++) {
-            let a = await Deployed.methods.tokenURI(i).call();
-            tokenURI.push(a);
+          let a = await Deployed.methods.tokenURI(i).call();
+          tokenURI.push(a);
         }
-        setTokenURI(tokenURI)
+        setTokenURI(tokenURI);
         setDeployed(Deployed);
         setWeb3(web3);
         setCount(count);
@@ -62,7 +61,7 @@ function App() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      {isLogin ? <div>{getTokenURI}</div> : "fail"}
+
       <CssBaseline />
       <div className="App">
         <Header
@@ -72,7 +71,7 @@ function App() {
           login={login}
         />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Main getTokenURI={getTokenURI} isLogin={isLogin } />} />
           <Route path="/minting" element={<Minting />} />
           <Route path="/shop" element={<Shop />} />
           <Route

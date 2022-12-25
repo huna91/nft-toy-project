@@ -72,7 +72,7 @@ const Header = ({ isLogin, theme, setTheme, login }) => {
       </Header_wrap_left>
       <Header_wrap_right>
         <form
-          class="search-form-wrapper"
+          className="search-form-wrapper"
           action="#"
           style={{ display: "flex" }}
         >
@@ -84,30 +84,30 @@ const Header = ({ isLogin, theme, setTheme, login }) => {
           <div>
             <button>
               찾기
-              <i class="feather-search"></i>
+              <i className="feather-search"></i>
             </button>
           </div>
         </form>
 
         {isLogin ? (
           <div>
-            <div class="icon-box">
+            <div className="icon-box">
               <a>Wallet connected</a>
             </div>
           </div>
         ) : (
           <div>
-            <div class="icon-box">
+            <div className="icon-box">
               <button onClick={login}>Wallet connect</button>
             </div>
           </div>
         )}
 
-        <div class="notification_badge">
+        <div className="notification_badge">
           <Switch {...label} defaultChecked onClick={ThemeChange} />
         </div>
 
-        <div id="my_switcher" class="my_switcher setting-option">
+        <div id="my_switcher" className="my_switcher setting-option">
           {backColor == "dark" ? <Brightness4Icon /> : <Brightness7Icon />}
         </div>
       </Header_wrap_right>
