@@ -5,6 +5,10 @@ module.exports = {
       port: 8545,
       network_id: "7722",
     },
+    goerli: {
+      provider: new Web3.providers.HttpProvider("https://rpc-goerli.gastracker.io"),
+      network_id: '5',
+    },
   },
 
   compilers: {
