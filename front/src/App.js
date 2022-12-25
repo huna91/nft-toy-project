@@ -13,7 +13,7 @@ function Alert_warn() {
   return (
     <div className="Alert_Wrap">
       <Stack sx={{ width: "100%" }} spacing={2}>
-        <Alert severity="warning" onClose={() => {}}>
+        <Alert severity="warning" onClose={() => { }}>
           <AlertTitle>Warning</AlertTitle>
           This is a warning alert — <strong>check it out!</strong>
         </Alert>
@@ -95,7 +95,7 @@ function App() {
     }
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
   console.log(web3);
   console.log(account);
   return (
