@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Web3 from "web3/dist/web3.min.js";
-
+//
 function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [theme, setTheme] = useState("light");
@@ -80,7 +80,7 @@ function App() {
     }
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
