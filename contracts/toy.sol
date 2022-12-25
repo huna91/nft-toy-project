@@ -7,7 +7,7 @@ import "../node_modules/openzeppelin-solidity/contracts/utils/Strings.sol";
 // import "./gazeaErc20.sol";
 
 contract NFTtoken is ERC721Enumerable,Ownable {
-    // 잔디 왜 안심김 ㅡㅡ
+    // 잔디 왜 안심김 ㅡㅡ왜 인ㅅ
 
     // 누가 어떤 NFT를 뽑았나 이벤트
     event nftTokenList(address nftTokenAddress,uint256 nftTokenNum);
