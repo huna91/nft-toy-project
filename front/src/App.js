@@ -95,9 +95,13 @@ function App() {
     }
   };
 
+<<<<<<< HEAD
   useEffect(() => { }, []);
   console.log(web3);
   console.log(account);
+=======
+  useEffect(() => {}, []);
+>>>>>>> b71faff (.)
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
